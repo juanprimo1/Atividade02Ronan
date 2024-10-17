@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+        }
+        img {
+            max-width: 90%;
+            max-height: 90%;
+            border: 5px solid #333;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img id="semestreImagem" src="" alt="Imagem do Semestre">
+    </div>
+    <script>
+        const images = [
+           'img/ds.jpg',
+           'img/pwI.png',
+           'img/pwIII.jpeg'
+        ];
+
+        function gerarImg() {
+            const randomIndex = Math.floor(Math.random() * images.length);
+            const imageElement = document.getElementById('semestreImagem');
+            imageElement.src = images[randomIndex];
+        }
+
+        // Carrega uma imagem aleatória ao iniciar
+        window.onload = gerarImg;
+    </script>
+</body>
+</html>

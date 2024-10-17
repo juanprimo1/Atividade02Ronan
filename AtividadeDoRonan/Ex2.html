@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+        }
+        img {
+            max-width: 90%;
+            max-height: 90%;
+            border: 5px solid #333;
+            border-radius: 10px;
+        }
+        .texto {
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img id="semestreImagem" src="" alt="Imagem do Semestre">
+        <div id="descricao" class="texto"></div>
+    </div>
+    <script>
+        const imagens = [
+            { src: 'img/ds.jpg', texto: 'Desenvolvimento de Sistemas' },
+            { src: 'img/pwI.jpg', texto: 'Programação Web I' },
+            { src: 'img/pwIII.jpeg', texto: 'Programação Web III' }
+        ];
+
+        function gerarImg() {
+            const randomIndex = Math.floor(Math.random() * imagens.length);
+            const imageElement = document.getElementById('semestreImagem');
+            const textoElement = document.getElementById('descricao');
+            imageElement.src = imagens[randomIndex].src;
+            textoElement.textContent = imagens[randomIndex].texto;
+        }
+
+        // Carrega uma imagem aleatória ao iniciar
+        window.onload = gerarImg;
+    </script>
+</body>
+</html>
